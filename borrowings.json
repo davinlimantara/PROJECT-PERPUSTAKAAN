@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "username": "dav",
+    "book_id": 3,
+    "judul": "Negeri 5 Menara",
+    "tanggal_pinjam": "13-11-2027",
+    "tanggal_kembali": "15-11-2027",
+    "status": "Dipinjam"
+  }
+]
