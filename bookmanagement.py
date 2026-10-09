@@ -14,21 +14,17 @@ class BookManagementPage(tk.Frame):
         self.controller = controller
         self.selected_id = None
 
-        # ==========================================
-        # LEFT SIDEBAR / TASKBAR NAVIGATION
-        # ==========================================
         sidebar = tk.Frame(self, bg=COLOR_PRIMARY, width=220)
         sidebar.pack(fill="y", side="left")
         sidebar.pack_propagate(False)
 
-        # Judul Aplikasi
         tk.Label(
             sidebar, text="Perpustakaan\nDigital",
             bg=COLOR_PRIMARY, fg="white", font=("Segoe UI", 14, "bold"),
             justify="left", anchor="w"
         ).pack(fill="x", padx=20, pady=(25, 20))
 
-        # Menu Navigasi Utama
+
         nav_menu = tk.Frame(sidebar, bg=COLOR_PRIMARY)
         nav_menu.pack(fill="x", expand=True, anchor="n")
 
@@ -39,7 +35,7 @@ class BookManagementPage(tk.Frame):
             command=lambda: controller.show_frame("HomePage")
         ).pack(fill="x", pady=2)
 
-        # Menu Buku (Aktif)
+        
         HoverButton(
             nav_menu, bg_normal=COLOR_ACCENT, bg_hover=COLOR_ACCENT_DARK,
             text="Buku", fg="white", font=FONT_NAV, bd=0, padx=16, pady=10,
@@ -61,7 +57,7 @@ class BookManagementPage(tk.Frame):
             command=lambda: controller.show_frame("UsersManagementPage")
         ).pack(fill="x", pady=2)
 
-        # Informasi User & Tombol Logout di Bagian Bawah Sidebar
+      
         self.nav_bottom = tk.Frame(sidebar, bg=COLOR_PRIMARY)
         self.nav_bottom.pack(side="bottom", fill="x", padx=16, pady=20)
 
@@ -77,9 +73,6 @@ class BookManagementPage(tk.Frame):
             cursor="hand2", command=controller.logout
         ).pack(fill="x")
 
-        # ==========================================
-        # MAIN CONTENT AREA
-        # ==========================================
         content = tk.Frame(self, bg=COLOR_BG)
         content.pack(fill="both", expand=True, padx=25, pady=20)
 
@@ -93,7 +86,7 @@ class BookManagementPage(tk.Frame):
         body.grid_columnconfigure(0, weight=0)
         body.grid_columnconfigure(1, weight=1)
 
-        # Form Input Buku
+      
         form = tk.Frame(body, bg=COLOR_CARD, padx=22, pady=20,
                         highlightthickness=1, highlightbackground="#dfe6e9")
         form.grid(row=0, column=0, sticky="ns", padx=(0, 16))
@@ -145,7 +138,7 @@ class BookManagementPage(tk.Frame):
             cursor="hand2", command=self.clear_fields
         ).grid(row=10, column=1, sticky="ew", ipady=7, pady=(8, 0), padx=(5, 0))
 
-        # Table & Search Area
+       
         right = tk.Frame(body, bg=COLOR_CARD,
                          highlightthickness=1, highlightbackground="#dfe6e9")
         right.grid(row=0, column=1, sticky="nsew")
