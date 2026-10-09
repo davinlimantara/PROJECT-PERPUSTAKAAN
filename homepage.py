@@ -49,30 +49,6 @@ class HomePage(tk.Frame):
         hero.pack(fill="x")
         hero.pack_propagate(False)
 
-        # [GAMBAR 2] Banner Background Hero (Opsional)
-        try:
-            hero_bg_raw = Image.open("assets/hero_banner.png").resize((1200, 180), Image.Resampling.LANCZOS)
-            self.hero_bg_img = ImageTk.PhotoImage(hero_bg_raw)
-            
-            hero_bg_label = tk.Label(hero, image=self.hero_bg_img, bg=COLOR_ACCENT)
-            hero_bg_label.place(x=0, y=0, relwidth=1, relheight=1)
-        except Exception as e:
-            print(f"Gambar hero banner tidak ditemukan/opsional: {e}")
-
-        hero_inner = tk.Frame(hero, bg=COLOR_ACCENT)
-        hero_inner.pack(expand=True)
-
-        tk.Label(
-            hero_inner, text="MONO DIGITAL LIBRARY",
-            bg=COLOR_ACCENT, fg="white", font=FONT_TITLE
-        ).pack(pady=(30, 5))
-
-        tk.Label(
-            hero_inner,
-            text="Jelajahi koleksi buku, baca artikel terbaru, dan kelola peminjamanmu di sini.",
-            bg=COLOR_ACCENT, fg="#eaf2f8", font=FONT_SUBTITLE
-        ).pack()
-
         # ==========================================================
         # 3. CONTENT AREA (ARTIKEL DIBATASI 2 BARAIS KEBAWAH)
         # ==========================================================
